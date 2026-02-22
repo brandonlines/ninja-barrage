@@ -1,0 +1,161 @@
+:root {
+  --bg: #132818;
+  --panel: #1f3b24;
+  --panel-border: #89a866;
+  --text: #f4f6ea;
+  --accent: #d3b758;
+  --danger: #d65f47;
+  --success: #72bf68;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 20%, #2f6e35 0%, #1c3d20 55%, #112515 100%);
+  color: var(--text);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+.game-shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.hud-item {
+  background: color-mix(in oklab, var(--panel), black 18%);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+}
+
+.stage-wrap {
+  position: relative;
+  border: 2px solid #b0c480;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #2f6d37;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 72vh;
+  touch-action: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 20, 12, 0.62);
+  padding: 16px;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+.overlay-card {
+  width: min(560px, 100%);
+  background: #16311a;
+  border: 1px solid #b6cb7f;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.overlay-card h1 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.overlay-card ul {
+  margin: 12px 0 18px;
+  padding-left: 18px;
+}
+
+.primary-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1c12;
+  background: linear-gradient(180deg, #f0d979, #cab253);
+}
+
+.mobile-controls {
+  margin-top: 12px;
+  display: none;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.dpad {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dpad-mid {
+  display: flex;
+  gap: 6px;
+}
+
+.dpad button,
+.action-btn {
+  border: 1px solid #a7bf79;
+  border-radius: 10px;
+  background: #244828;
+  color: #eef5dc;
+  font-size: 1rem;
+  min-width: 56px;
+  min-height: 56px;
+}
+
+.action-btn {
+  font-weight: 700;
+  min-width: 96px;
+}
+
+.action-btn.sword {
+  background: #364f6f;
+}
+
+.action-btn.shuriken {
+  background: #6a4238;
+}
+
+kbd {
+  border: 1px solid #a8bc73;
+  background: #213a22;
+  border-radius: 5px;
+  padding: 2px 6px;
+}
+
+@media (max-width: 900px) {
+  .hud {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mobile-controls {
+    display: flex;
+  }
+}
