@@ -2,6 +2,10 @@
 
 Ninja Barrage is a static browser game designed for desktop and mobile.
 
+## Live Game
+
+- GitHub Pages: `https://brandonlines.github.io/ninja-barrage/`
+
 ## Gameplay Rules
 
 - You are a ninja defending your home in a grass field.
